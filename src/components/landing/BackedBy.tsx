@@ -1,0 +1,48 @@
+import React from 'react';
+import Image from 'next/image';
+import BackedBy1 from '@/assets/BackedBy1.png';
+import BackedBy2 from '@/assets/BackedBy2.png';
+import BackedBy3 from '@/assets/BackedBy3.png';
+import BackedBy4 from '@/assets/BackedBy4.png';
+import BackedBy5 from '@/assets/BackedBy5.png';
+import BackedBy6 from '@/assets/BackedBy6.png';
+import BackedBy7 from '@/assets/BackedBy7.png';
+import BackedBy8 from '@/assets/BackedBy8.png';
+
+const BackedBy = () => {
+  return (
+    <div className='section-inner-shadow flex flex-col items-center w-full gap-7 py-[61px]'>
+        <div className='custom-text-gradient poppins-semibold text-[32px] leading-[66px]'>Backed by the best in the Industry</div>
+        <div className='flex items-center gap-[96px]'>
+            <div className='relative h-[45px]'>
+                <Image src={BackedBy1} alt='backed-by-1' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-20'>
+                <Image src={BackedBy2} alt='backed-by-2' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-20'>
+                <Image src={BackedBy3} alt='backed-by-3' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-[54px]'>
+                <Image src={BackedBy4} alt='backed-by-4' className='object-cover h-full w-auto' />
+            </div>
+        </div>
+        <div className='flex items-center gap-[60px]'>
+            <div className='relative h-11'>
+                <Image src={BackedBy5} alt='backed-by-5' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-20'>
+                <Image src={BackedBy6} alt='backed-by-6' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-[67px]'>
+                <Image src={BackedBy7} alt='backed-by-7' className='object-cover h-full w-auto' />
+            </div>
+            <div className='relative h-[50px]'>
+                <Image src={BackedBy8} alt='backed-by-8' className='object-cover h-full w-auto' />
+            </div>
+        </div>
+    </div>
+  )
+}
+
+export default BackedBy
