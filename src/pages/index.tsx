@@ -6,7 +6,7 @@ import BackedBy from "@/components/landing/BackedBy";
 import NeoGPTSection from "@/components/landing/NeoGPTSection";
 import MediaArticles from "@/components/landing/MediaArticles";
 import ReliableSection from "@/components/landing/ReliabeSection";
-
+import DeployedSecurely from "@/components/landing/DeployedSecurely";
 import OurBlog from "@/components/landing/OurBlog";
 import Footer from "@/components/landing/Footer";
 
@@ -21,7 +21,7 @@ export default function Home() {
       <NeoGPTSection/>
       <MediaArticles/>
       <ReliableSection/>
-
+      <DeployedSecurely/>
       <OurBlog/>
       <Footer/>
     </div>

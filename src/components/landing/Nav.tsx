@@ -15,7 +15,7 @@ const Nav = () => {
             <a href="#">Blogs</a>
             <a href="#">Contact</a>
         </div>
-        <button className='btn-gradient rounded-[4.5px] text-[13px] text-white exo-2-bold px-[22px] py-[9px]'>Get free trial</button>
+        <a href='#' className='btn-gradient rounded-[4.5px] text-[13px] text-white exo-2-bold px-[22px] py-[9px]'>Get free trial</a>
     </nav>
   )
 }

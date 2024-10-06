@@ -41,12 +41,12 @@ const uiData:BlogCardProps[] = [
 
 const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) => {
     return (
-        <a href={link} className='flex flex-col'>
-            <div className='relative overflow-hidden rounded-2xl w-[380px] h-[380px]'>
+        <a href={link} className='flex flex-col w-[380px]'>
+            <div className='relative overflow-hidden rounded-2xl w-full h-[380px]'>
                 <Image src={imgSrc} alt='blog-img' className='object-cover' fill />
             </div>
-            <div className='poppins-semibold text-[21px] text-[#272727] whitespace-pre-line mt-6 mb-2'>{title}</div>
-            <div className='poppins-regular text-[16px] text-[#272727] whitespace-pre-line mb-6'>{description}</div>
+            <div className='poppins-semibold text-[21px] text-[#272727] text-wrap whitespace-pre-line mt-6 mb-2'>{title}</div>
+            <div className='poppins-regular text-[16px] text-[#272727] text-wrap whitespace-pre-line mb-6'>{description}</div>
             <div className='flex gap-2'>
             {tags.map((tag:string,idx:number)=>
                 <div key={idx} className='bg-[#10A68C8F] rounded-[4px] text-[#272727] poppins-medium text-sm px-2.5 py-1'>{tag}</div>

@@ -13,9 +13,9 @@ const NeoGPTSection = () => {
         <div className='relative w-[65%] ml-40'>
           <Image src={NeoGPTChart} alt='neogpt-chart' className='object-cover' />
         </div>
-        <button className='btn-gradient rounded-lg p-[2.5px] mt-[66px]'>
+        <a href='#' className='btn-gradient rounded-lg p-[2.5px] mt-[66px]'>
           <div className='rounded-[5.5px] poppins-bold bg-[#FEFDF5] leading-[31px] text-[#36AA8E] text-[21px] px-9 py-3'>View Results</div>
-        </button>
+        </a>
     </div>
   )
 }
