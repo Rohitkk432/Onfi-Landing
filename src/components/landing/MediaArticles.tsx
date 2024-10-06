@@ -74,9 +74,11 @@ const MediaArticles = () => {
             {uiData.map((item:ArticleCardProps,idx:number)=>
                 <ArticleCard title={item.title} description={item.description} imgSrc={item.imgSrc} link={item.link} key={idx} />
             )}
+            <div className='flex gap-[50px] hide-extra-articles'>
             {uiData.map((item:ArticleCardProps,idx:number)=>
                 <ArticleCard title={item.title} description={item.description} imgSrc={item.imgSrc} link={item.link} key={idx} />
             )}
+            </div>
         </div>
         </div>
     </div>

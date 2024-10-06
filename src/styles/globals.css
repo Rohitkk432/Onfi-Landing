@@ -47,6 +47,9 @@
 .articles-container{
   overflow-x: scroll !important;
 }
+.hide-extra-articles{
+  display: none !important;
+}
 
 .hide-scrollbar {
   -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -62,6 +65,9 @@
   }
   .articles-container{
     overflow-x: hidden !important;
+  }
+  .hide-extra-articles{
+    display: flex !important;
   }
 }
 
