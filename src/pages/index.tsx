@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import HeroSection from "@/components/landing/HeroSection";
 import Nav from "@/components/landing/Nav";
 import WorksWith from "@/components/landing/WorksWith";
@@ -10,10 +12,14 @@ import DeployedSecurely from "@/components/landing/DeployedSecurely";
 import OurBlog from "@/components/landing/OurBlog";
 import Footer from "@/components/landing/Footer";
 
+
 export default function Home() {
+  const [openNav,setOpenNav] = useState(false);
   return (
-    <div className='w-screen min-h-screen flex flex-col items-center bg-[#FEFDF5]'>
-      <Nav/>
+    <div onClick={()=>{
+      setOpenNav(false);
+    }} className='w-screen min-h-screen flex flex-col items-center bg-[#FEFDF5]'>
+      <Nav openNav={openNav} setOpenNav={setOpenNav} />
       <HeroSection/>
       <WorksWith/>
       <AutomateFinance/>
@@ -21,7 +27,7 @@ export default function Home() {
       <NeoGPTSection/>
       <MediaArticles/>
       <ReliableSection/>
-      <DeployedSecurely/>
+      {/* <DeployedSecurely/> */}
       <OurBlog/>
       <Footer/>
     </div>

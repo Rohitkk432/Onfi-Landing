@@ -153,7 +153,7 @@ const DeployedSecurely = () => {
     const [current,setCurrent] = useState<number>(1);
     return (
         <div className='section-inner-shadow flex flex-col items-center w-full py-[91px]'>
-            <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px] mb-[70px]'>
+            <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-8 sm:px-10 custom-text-gradient text-center lg:leading-[84px] mb-[70px]'>
             Deployed securely on your premises
             </div>
             <div className='w-full flex items-center justify-center'>

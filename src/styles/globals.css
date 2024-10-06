@@ -41,8 +41,30 @@
 }
 
 .articles-animation {
-  animation: articles-marquee 20s linear infinite;
+  padding-bottom: 40px;
 }
+
+.articles-container{
+  overflow-x: scroll !important;
+}
+
+@media screen and (min-width: 860px) {
+  .articles-animation {
+    animation: articles-marquee 15s linear infinite;
+  }
+  .articles-container{
+    overflow-x: hidden !important;
+  }
+}
+
+
+@media screen and (min-width: 1024px) {
+  .articles-animation {
+    animation: articles-marquee 20s linear infinite;
+    padding-bottom: 0;
+  }
+}
+
 
 @keyframes articles-marquee {
   0% {

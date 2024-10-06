@@ -41,12 +41,12 @@ const uiData:BlogCardProps[] = [
 
 const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) => {
     return (
-        <a href={link} className='flex flex-col w-[380px]'>
-            <div className='relative overflow-hidden rounded-2xl w-full h-[380px]'>
+        <a href={link} className='flex flex-col min-w-[280px] md:min-w-[380px]'>
+            <div className='relative overflow-hidden rounded-2xl w-full min-h-[280px] lg:min-h-[380px]'>
                 <Image src={imgSrc} alt='blog-img' className='object-cover' fill />
             </div>
-            <div className='poppins-semibold text-[21px] text-[#272727] text-wrap whitespace-pre-line mt-6 mb-2'>{title}</div>
-            <div className='poppins-regular text-[16px] text-[#272727] text-wrap whitespace-pre-line mb-6'>{description}</div>
+            <div className='poppins-semibold text-[21px] text-[#272727] text-wrap lg:whitespace-pre-line mt-6 mb-2'>{title}</div>
+            <div className='poppins-regular text-[16px] text-[#272727] text-wrap lg:whitespace-pre-line mb-6'>{description}</div>
             <div className='flex gap-2'>
             {tags.map((tag:string,idx:number)=>
                 <div key={idx} className='bg-[#10A68C8F] rounded-[4px] text-[#272727] poppins-medium text-sm px-2.5 py-1'>{tag}</div>
@@ -59,16 +59,16 @@ const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) 
 
 const OurBlog = () => {
   return (
-    <div className='section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-[100px]'>
-        <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px] mb-8'>
+    <div className='section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-[100px] pl-10'>
+        <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px] mb-8 pr-10'>
         Our blog
         </div>
-        <div className='flex gap-8 mb-8'>
+        <div className='flex gap-4 md:gap-8 mb-8 overflow-x-scroll w-full xl:justify-center pb-10 xl:pb-0 pr-10'>
             {uiData.map((item:BlogCardProps,idx:number)=>
                 <BlogCard title={item.title} description={item.description} link={item.link} imgSrc={item.imgSrc} tags={item.tags} key={idx} />
             )}
         </div>
-        <a href='#' className='flex items-center ml-auto mr-40'>
+        <a href='#' className='flex items-center ml-auto mr-auto xl:mr-40'>
             <div className='text-[21px] text-[#5BB5A2] poppins-semibold'>All Articles</div>
             <div className='relative w-6 h-6'>
                 <Image src={ArrowRightIcon} alt='right-arrow' className='object-cover' fill />

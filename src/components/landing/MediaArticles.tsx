@@ -65,8 +65,8 @@ const MediaArticles = () => {
         <div className='poppins-semibold text-[32px] custom-text-gradient text-center leading-[66px]'>
             Media Articles
         </div>
-        <div className='poppins-regular text-[21px] text-center text-[#2F2F2F] mb-16' >Featured in 15+ reputable news sources</div>
-        <div className='w-[85%] mx-auto overflow-hidden'>
+        <div className='poppins-regular text-[21px] text-center text-[#2F2F2F] mb-16 px-10' >Featured in 15+ reputable news sources</div>
+        <div className='w-[85%] mx-auto articles-container overflow-hidden'>
         <div className='flex gap-[50px] px-[25px] articles-animation'>
             {uiData.map((item:ArticleCardProps,idx:number)=>
                 <ArticleCard title={item.title} description={item.description} imgSrc={item.imgSrc} link={item.link} key={idx} />

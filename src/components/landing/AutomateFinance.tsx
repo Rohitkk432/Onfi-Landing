@@ -37,7 +37,7 @@ const uiData:AutomateCardsProps[] = [
 
 const AutomateCards:React.FC<AutomateCardsProps> = ({icon,title,description}) => {
   return (
-    <div className='bg-[#ecf9ef] rounded-xl p-6 flex flex-col gap-4'>
+    <div className='bg-[#ecf9ef] w-[22rem] rounded-xl p-6 flex flex-col gap-4'>
       <div className='flex items-center gap-[14px]'>
         <div className='w-12 h-12 rounded-[10px] btn-gradient p-2.5'>
           <div className='relative w-full h-full'>
@@ -54,17 +54,16 @@ const AutomateCards:React.FC<AutomateCardsProps> = ({icon,title,description}) =>
 const AutomateFinance = () => {
   return (
     <div className='section-inner-shadow flex flex-col items-center w-full gap-16 py-20'>
-        <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px]'>
-            Automate Financial Compliance<br/>
-            with NeoGPT Compliance360
+        <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-6 sm:px-10 custom-text-gradient text-center lg:leading-[84px]'>
+            Automate Financial Compliance<span className='hidden xl:inline'><br/></span> with NeoGPT Compliance360
         </div>
-        <div className='flex items-center w-full justify-center gap-16'>
-            <div className='flex flex-col gap-8'>
+        <div className='flex items-center w-full justify-center gap-16 px-10'>
+            <div className='flex flex-row flex-wrap items-center justify-center xl:flex-col gap-8'>
               {uiData.map((item:AutomateCardsProps,idx:number)=>
                 <AutomateCards title={item.title} description={item.description} icon={item.icon} key={idx} />
               )}
             </div>
-            <div className='relative w-[60%]'>
+            <div className='relative w-[60%] hidden xl:block'>
               <Image src={AutomateImg} alt='automate-img' className='object-cover' />
             </div>
         </div>

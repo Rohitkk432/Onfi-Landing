@@ -15,7 +15,7 @@ import LinkedinIcon from '@/assets/icons/linkedin-icon.svg';
 const Footer = () => {
   return (
     <footer className='bg-[#1B1B1B] w-full px-[5%] flex flex-col items-center'>
-        <div className='flex my-[75px] gap-[100px] justify-center'>
+        <div className='flex my-[75px] justify-between gap-10 w-full px-10 md:px-20 flex-wrap'>
 
             <div className='flex flex-col'>
                 <div className='relative'>
@@ -28,22 +28,24 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='flex flex-col gap-5 poppins-medium text-base text-[#CFD3D7]'>
-                <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Pages</div>
-                <a href="#" className=''>Neo GPT</a>
-                <a href="#" className=''>Features</a>
-                <a href="#" className=''>Pricing</a>
-                <a href="#" className=''>Contact</a>
-            </div>
-            <div className='flex flex-col gap-5 poppins-medium text-base text-[#CFD3D7]'>
-                <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Solutions</div>
-                <a href="#" className=''>Research</a>
-                <a href="#" className=''>Sales Team</a>
-                <a href="#" className=''>Customer Success</a>
+            <div className='flex gap-10 sm:gap-20 justify-between'>
+                <div className='flex flex-col gap-5 poppins-medium text-base text-[#CFD3D7]'>
+                    <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Pages</div>
+                    <a href="#" className=''>Neo GPT</a>
+                    <a href="#" className=''>Features</a>
+                    <a href="#" className=''>Pricing</a>
+                    <a href="#" className=''>Contact</a>
+                </div>
+                <div className='flex flex-col gap-5 poppins-medium text-base text-[#CFD3D7]'>
+                    <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Solutions</div>
+                    <a href="#" className=''>Research</a>
+                    <a href="#" className=''>Sales Team</a>
+                    <a href="#" className=''>Customer Success</a>
+                </div>
             </div>
             <div className='flex flex-col gap-5'>
                 <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Connect with us</div>
-                <div className='flex gap-10 items-center'>
+                <div className='flex gap-10 items-center flex-wrap mb-6'>
                     <a href='#'className='flex items-center gap-4'>
                         <div className='relative w-6 h-6'>
                             <Image src={MailIcon} alt='icon' className='object-cover' fill />
@@ -74,7 +76,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className='w-full flex justify-center items-center border-t border-[#10A68C] pt-[25px] mb-[40px] poppins-regular text-base text-[#CFD3D7]'>© Copyright OnFInance 2023 -2024 | Privacy Policy | Terms and Conditions</div>
+        <div className='w-full flex justify-center items-center border-t border-[#10A68C] pt-[25px] mb-[40px] poppins-regular text-base text-[#CFD3D7] text-center px-10'>© Copyright OnFInance 2023 -2024 | Privacy Policy | Terms and Conditions</div>
 
     </footer>
   )
