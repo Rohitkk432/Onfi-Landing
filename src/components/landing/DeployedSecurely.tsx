@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
+import { useIsVisible } from './useIsVisible'
 import Image from 'next/image'
 import StarsIcon from '@/assets/icons/stars-icon.svg'
 import CheckIcon from '@/assets/icons/check-icon.svg'
@@ -92,7 +93,7 @@ interface DeployCardProps {
 
 const DeployCenter:React.FC<DeployCardProps> = ({data}) => {
     return (
-        <div className='flex w-[34rem] flex-col rounded-xl border-4 border-[#10A68C] overflow-hidden custom-drop-shadow'>
+        <div className='flex w-[34rem] flex-col rounded-xl border-4 shrink-0 border-[#10A68C] overflow-hidden custom-drop-shadow'>
             <div className='flex w-full gap-2 poppins-semibold bg-[#10A68C] text-[#FFFFFF] text-2xl py-5 justify-center items-center'>
                 <div>{data.useCase}</div>
                 <div className='relative w-6 h-6'>
@@ -125,7 +126,7 @@ const DeployCenter:React.FC<DeployCardProps> = ({data}) => {
 
 const DeploySide:React.FC<DeployCardProps> = ({data,setCurrent}) => {
     return (
-        <div onClick={()=>setCurrent(data.cardNumber)} className='flex flex-col rounded-l-xl overflow-hidden custom-drop-shadow w-[24rem]'>
+        <div onClick={()=>setCurrent(data.cardNumber)} className='flex flex-col shrink-0 rounded-l-xl overflow-hidden custom-drop-shadow w-[22rem]'>
             <div className='w-full flex justify-center items-center poppins-medium text-[#323232] text-[32px] leading-[60px] py-8 px-10 bg-[rgb(255,255,255)] border border-[#0000001A]'>
                 {data.title}
             </div>
@@ -151,12 +152,14 @@ const DeploySide:React.FC<DeployCardProps> = ({data,setCurrent}) => {
 
 const DeployedSecurely = () => {
     const [current,setCurrent] = useState<number>(1);
+    const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
     return (
-        <div className='section-inner-shadow flex flex-col items-center w-full py-[91px]'>
-            <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-8 sm:px-10 custom-text-gradient text-center lg:leading-[84px] mb-[70px]'>
+        <div ref={refEl} className={`section-inner-shadow flex flex-col items-center overflow-hidden w-full pb-0 pt-[91px] lg:pb-[91px] transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`}>
+            <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-8 sm:px-10 custom-text-gradient text-center lg:leading-[84px] mb-0 xl:mb-[70px]'>
             Deployed securely on your premises
             </div>
-            <div className='w-full flex items-center justify-center'>
+            <div className='w-full flex h-[50rem] items-center justify-center -my-40  sm:-my-32 md:-my-20 lg:-my-10 xl:my-0 scale-[0.4] sm:scale-50 md:scale-[0.60] lg:scale-75 xl:scale-100'>
                 <DeploySide data={uiData[cardOrders[current][0]]} setCurrent={setCurrent} />
                 <DeployCenter data={uiData[cardOrders[current][1]]} setCurrent={setCurrent} />
                 <DeploySide data={uiData[cardOrders[current][2]]} setCurrent={setCurrent} />

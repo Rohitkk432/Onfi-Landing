@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useRef} from 'react'
+import { useIsVisible } from './useIsVisible';
 import Image,{StaticImageData} from 'next/image'
 import YourStoryImg from '@/assets/YourStory.png';
 import CNBCTVImg from '@/assets/CNBCTV.png';
@@ -60,13 +61,15 @@ const ArticleCard:React.FC<ArticleCardProps> = ({title,description,link,imgSrc})
 }
 
 const MediaArticles = () => {
+    const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
   return (
-    <div className='section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-20'>
+    <div ref={refEl} className={`section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-20 transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`} >
         <div className='poppins-semibold text-[32px] custom-text-gradient text-center leading-[66px]'>
             Media Articles
         </div>
         <div className='poppins-regular text-[21px] text-center text-[#2F2F2F] mb-16 px-10' >Featured in 15+ reputable news sources</div>
-        <div className='w-[85%] mx-auto articles-container overflow-hidden'>
+        <div className='w-[85%] mx-auto articles-container overflow-hidden hide-scrollbar'>
         <div className='flex gap-[50px] px-[25px] articles-animation'>
             {uiData.map((item:ArticleCardProps,idx:number)=>
                 <ArticleCard title={item.title} description={item.description} imgSrc={item.imgSrc} link={item.link} key={idx} />

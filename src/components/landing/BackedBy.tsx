@@ -1,4 +1,5 @@
-import React from 'react';
+import React,{useRef} from 'react';
+import { useIsVisible } from './useIsVisible';
 import Image from 'next/image';
 import BackedBy1 from '@/assets/BackedBy1.png';
 import BackedBy2 from '@/assets/BackedBy2.png';
@@ -10,8 +11,10 @@ import BackedBy7 from '@/assets/BackedBy7.png';
 import BackedBy8 from '@/assets/BackedBy8.png';
 
 const BackedBy = () => {
-  return (
-    <div className='section-inner-shadow flex flex-col items-center w-full gap-7 py-[61px]'>
+    const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
+    return (
+    <div ref={refEl} className={`section-inner-shadow flex flex-col items-center w-full gap-7 py-[61px] transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`}>
         <div className='custom-text-gradient poppins-semibold text-[32px] leading-[42px] lg:leading-[66px] text-center px-10'>Backed by the best in the Industry</div>
         <div className='flex items-center justify-center flex-wrap'>
             <div className='relative mx-1 sm:mx-4 lg:mx-[48px] h-[45px]'>

@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useRef} from 'react';
+import { useIsVisible } from './useIsVisible';
 import Image from 'next/image'
 import Logo from '@/assets/Logo.svg'
 
@@ -13,8 +14,10 @@ import LinkedinIcon from '@/assets/icons/linkedin-icon.svg';
 
 
 const Footer = () => {
+    const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
   return (
-    <footer className='bg-[#1B1B1B] w-full px-[5%] flex flex-col items-center'>
+    <footer ref={refEl} className={`bg-[#1B1B1B] w-full px-[5%] flex flex-col items-center transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`} >
         <div className='flex my-[75px] justify-between gap-10 w-full px-10 md:px-20 flex-wrap'>
 
             <div className='flex flex-col'>

@@ -48,6 +48,14 @@
   overflow-x: scroll !important;
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar { 
+  display: none;  /* Safari and Chrome */
+}
+
 @media screen and (min-width: 860px) {
   .articles-animation {
     animation: articles-marquee 15s linear infinite;

@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useRef} from 'react'
+import { useIsVisible } from './useIsVisible'
 import Image,{StaticImageData} from 'next/image'
 import Blog1Img from "@/assets/Blog1.png"
 import Blog2Img from "@/assets/Blog2.png"
@@ -58,12 +59,14 @@ const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) 
 
 
 const OurBlog = () => {
+    const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
   return (
-    <div className='section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-[100px] pl-10'>
-        <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px] mb-8 pr-10'>
+    <div ref={refEl} className={`section-inner-shadow flex flex-col items-center w-full pt-[50px] pb-[100px] pl-10 transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`} >
+        <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-8 sm:px-10 custom-text-gradient text-center lg:leading-[84px] mb-8 pr-10'>
         Our blog
         </div>
-        <div className='flex gap-4 md:gap-8 mb-8 overflow-x-scroll w-full xl:justify-center pb-10 xl:pb-0 pr-10'>
+        <div className='flex gap-4 md:gap-8 mb-8 overflow-x-scroll hide-scrollbar w-full xl:justify-center pb-10 xl:pb-0 pr-10'>
             {uiData.map((item:BlogCardProps,idx:number)=>
                 <BlogCard title={item.title} description={item.description} link={item.link} imgSrc={item.imgSrc} tags={item.tags} key={idx} />
             )}

@@ -1,11 +1,14 @@
-import React from 'react'
+import React,{useRef} from 'react';
+import { useIsVisible } from './useIsVisible';
 import Image from 'next/image'
 import NeoGPTChart from '@/assets/NeoGPTChart.svg'
 
 
 const NeoGPTSection = () => {
+  const refEl = useRef(null);
+    const isVisible = useIsVisible(refEl);
   return (
-    <div className='section-inner-shadow flex flex-col items-center w-full py-[61px]'>
+    <div ref={refEl} className={`section-inner-shadow flex flex-col items-center w-full py-[61px] transition-all ease-in duration-500 ${isVisible ? "translate-y-0" : "translate-y-20"}`}>
         <div className='poppins-semibold text-[32px] leading-[42px] sm:text-[36px] sm:leading-[48px] md:text-[48px] md:leading-[56px] lg:text-[64px] px-6 sm:px-10 custom-text-gradient text-center lg:leading-[84px] mb-7'>
           NeoGPT is in the top 10%ile of CFA,<span className='hidden xl:inline'><br/></span> FRM, and NISM test takers
         </div>
