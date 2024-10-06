@@ -10,6 +10,9 @@ import DeployedSecurely from "@/components/landing/DeployedSecurely";
 import OurBlog from "@/components/landing/OurBlog";
 import Footer from "@/components/landing/Footer";
 
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 export default function Home() {
   return (
     <div className='w-screen min-h-screen flex flex-col items-center bg-[#FEFDF5]'>

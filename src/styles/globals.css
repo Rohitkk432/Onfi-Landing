@@ -13,6 +13,38 @@
   box-sizing: border-box;
 }
 
+.slick-slide > div {
+  display: grid;
+  place-items: center;
+  height: 400px;
+  padding-top:9rem;
+}
+
+.slick-current > div {
+  padding-top: 0 !important;
+}
+
+.slick-active {
+  width: fit-content !important;
+}
+
+.slick-current .card-boxes .main-card {
+  display: flex !important;
+}
+
+.slick-current .card-boxes .side-card {
+  display: none !important;
+}
+
+/* .slick-slide .card-boxes {
+  opacity: 0;
+}
+
+.slick-active .card-boxes {
+  opacity: 1 !important; 
+} */
+
+
 .nav-shadow {
   box-shadow: 0px 4px 18px 0px #10A68C4D;
 }

@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
 import Image from 'next/image'
+import Slider from "react-slick";
+
 import StarsIcon from '@/assets/icons/stars-icon.svg'
 import CheckIcon from '@/assets/icons/check-icon.svg'
 
@@ -83,11 +85,8 @@ const uiData:DeployUIData[] = [
     }
 ]
 
-const cardOrders = [[2,0,1],[0,1,2],[1,2,0]]
-
 interface DeployCardProps {
     data:DeployUIData,
-    setCurrent: React.Dispatch<React.SetStateAction<number>>;
 }
 
 const DeployCenter:React.FC<DeployCardProps> = ({data}) => {
@@ -123,9 +122,10 @@ const DeployCenter:React.FC<DeployCardProps> = ({data}) => {
     )
 }
 
-const DeploySide:React.FC<DeployCardProps> = ({data,setCurrent}) => {
+const DeploySide:React.FC<DeployCardProps> = ({data}) => {
     return (
-        <div onClick={()=>setCurrent(data.cardNumber)} className='flex flex-col rounded-l-xl overflow-hidden custom-drop-shadow w-[24rem]'>
+        <div
+         className='flex flex-col rounded-l-xl overflow-hidden custom-drop-shadow w-[24rem]'>
             <div className='w-full flex justify-center items-center poppins-medium text-[#323232] text-[32px] leading-[60px] py-8 px-10 bg-[rgb(255,255,255)] border border-[#0000001A]'>
                 {data.title}
             </div>
@@ -149,17 +149,46 @@ const DeploySide:React.FC<DeployCardProps> = ({data,setCurrent}) => {
     )
 }
 
+const DeployCard:React.FC<DeployCardProps> = ({data}) => {
+    return(
+        <div className='card-boxes'>
+            <div className='main-card hidden'>
+                <DeployCenter data={data} />
+            </div>
+            <div className='side-card'>
+                <DeploySide data={data} />
+            </div>
+        </div>
+    )
+}
+
 const DeployedSecurely = () => {
-    const [current,setCurrent] = useState<number>(1);
+    const settings = {
+        className:'w-full',
+        centerMode: true,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        centerPadding: "110px",
+        arrows:true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+    };
+
     return (
-        <div className='section-inner-shadow flex flex-col items-center w-full py-[91px]'>
+        <div className='section-inner-shadow overflow-hidden flex flex-col items-center w-full py-[91px]'>
             <div className='poppins-semibold text-[64px] custom-text-gradient text-center leading-[84px] mb-[70px]'>
             Deployed securely on your premises
             </div>
             <div className='w-full flex items-center justify-center'>
-                <DeploySide data={uiData[cardOrders[current][0]]} setCurrent={setCurrent} />
-                <DeployCenter data={uiData[cardOrders[current][1]]} setCurrent={setCurrent} />
-                <DeploySide data={uiData[cardOrders[current][2]]} setCurrent={setCurrent} />
+                <Slider {...settings}>
+                    <DeployCard data={uiData[0]} />
+                    <DeployCard data={uiData[1]} />
+                    <DeployCard data={uiData[2]} />
+                    <DeployCard data={uiData[0]} />
+                    <DeployCard data={uiData[1]} />
+                    <DeployCard data={uiData[2]} />
+                </Slider>
             </div>
         </div>
     )
