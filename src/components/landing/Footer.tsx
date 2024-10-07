@@ -31,7 +31,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className='flex gap-10 sm:gap-20 justify-between'>
+            {/* <div className='flex gap-10 sm:gap-20 justify-between'>
                 <div className='flex flex-col gap-5 poppins-medium text-base text-[#CFD3D7]'>
                     <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Pages</div>
                     <a href="#" className=''>Neo GPT</a>
@@ -45,7 +45,7 @@ const Footer = () => {
                     <a href="#" className=''>Sales Team</a>
                     <a href="#" className=''>Customer Success</a>
                 </div>
-            </div>
+            </div> */}
             <div className='flex flex-col gap-5'>
                 <div className='poppins-bold text-base text-[#10A68C] mb-[6px]'>Connect with us</div>
                 <div className='flex gap-10 items-center flex-wrap mb-6'>
