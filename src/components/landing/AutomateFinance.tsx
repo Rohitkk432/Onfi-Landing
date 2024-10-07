@@ -5,7 +5,7 @@ import IconLibrary from '@/assets/icons/icon-library.svg';
 import IconAssignmentAdd from '@/assets/icons/icon-assignment-add.svg';
 import IconCompliance from '@/assets/icons/icon-compliance.svg';
 
-import AutomateImg from '@/assets/AutomateSectionImg.png'
+import AutomateImg from '@/assets/landing/AutomateSectionImg.png'
 
 interface AutomateCardsProps {
   icon: StaticImageData,

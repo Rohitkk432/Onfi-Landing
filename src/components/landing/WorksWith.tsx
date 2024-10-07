@@ -1,10 +1,10 @@
 import React,{useRef} from 'react';
 import Image from 'next/image';
-import WorksWith1 from '@/assets/workswith1.svg';
-import WorksWith2 from '@/assets/workswith2.png';
-import WorksWith3 from '@/assets/workswith3.svg';
-import WorksWith4 from '@/assets/workswith4.svg';
-import WorksWith5 from '@/assets/workswith5.svg'
+import WorksWith1 from '@/assets/landing/workswith1.svg';
+import WorksWith2 from '@/assets/landing/workswith2.png';
+import WorksWith3 from '@/assets/landing/workswith3.svg';
+import WorksWith4 from '@/assets/landing/workswith4.svg';
+import WorksWith5 from '@/assets/landing/workswith5.svg'
 
 import { useIsVisible } from './useIsVisible';
 

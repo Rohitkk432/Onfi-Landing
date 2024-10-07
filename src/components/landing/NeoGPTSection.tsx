@@ -1,7 +1,7 @@
 import React,{useRef} from 'react';
 import { useIsVisible } from './useIsVisible';
 import Image from 'next/image'
-import NeoGPTChart from '@/assets/NeoGPTChart.svg'
+import NeoGPTChart from '@/assets/landing/NeoGPTChart.svg'
 
 
 const NeoGPTSection = () => {

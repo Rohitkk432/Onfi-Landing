@@ -1,7 +1,7 @@
 import React,{useRef} from 'react'
 import { useIsVisible } from './useIsVisible'
 import Image from 'next/image'
-import ReliableImg from '@/assets/ReliableSection.svg'
+import ReliableImg from '@/assets/landing/ReliableSection.svg'
 
 
 const ReliableSection = () => {

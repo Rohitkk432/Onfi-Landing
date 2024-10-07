@@ -1,14 +1,14 @@
 import React,{useRef} from 'react';
 import { useIsVisible } from './useIsVisible';
 import Image from 'next/image';
-import BackedBy1 from '@/assets/BackedBy1.png';
-import BackedBy2 from '@/assets/BackedBy2.png';
-import BackedBy3 from '@/assets/BackedBy3.png';
-import BackedBy4 from '@/assets/BackedBy4.png';
-import BackedBy5 from '@/assets/BackedBy5.png';
-import BackedBy6 from '@/assets/BackedBy6.png';
-import BackedBy7 from '@/assets/BackedBy7.png';
-import BackedBy8 from '@/assets/BackedBy8.png';
+import BackedBy1 from '@/assets/landing/BackedBy1.png';
+import BackedBy2 from '@/assets/landing/BackedBy2.png';
+import BackedBy3 from '@/assets/landing/BackedBy3.png';
+import BackedBy4 from '@/assets/landing/BackedBy4.png';
+import BackedBy5 from '@/assets/landing/BackedBy5.png';
+import BackedBy6 from '@/assets/landing/BackedBy6.png';
+import BackedBy7 from '@/assets/landing/BackedBy7.png';
+import BackedBy8 from '@/assets/landing/BackedBy8.png';
 
 const BackedBy = () => {
     const refEl = useRef(null);

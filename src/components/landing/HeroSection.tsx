@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import HeroImage from '@/assets/HeroImage.svg'
+import HeroImage from '@/assets/landing/HeroImage.svg'
 
 const HeroSection = () => {
   return (

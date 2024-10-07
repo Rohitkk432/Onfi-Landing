@@ -1,11 +1,11 @@
 import React,{useRef} from 'react'
 import { useIsVisible } from './useIsVisible';
 import Image,{StaticImageData} from 'next/image'
-import YourStoryImg from '@/assets/YourStory.png';
-import CNBCTVImg from '@/assets/CNBCTV.png';
-import MicrosoftImg from '@/assets/Microsoft.png';
-import TheFinExpImg from '@/assets/TheFinExp.png';
-import ForbesImg from '@/assets/Forbes.png';
+import YourStoryImg from '@/assets/landing/YourStory.png';
+import CNBCTVImg from '@/assets/landing/CNBCTV.png';
+import MicrosoftImg from '@/assets/landing/Microsoft.png';
+import TheFinExpImg from '@/assets/landing/TheFinExp.png';
+import ForbesImg from '@/assets/landing/Forbes.png';
 
 
 interface ArticleCardProps {
