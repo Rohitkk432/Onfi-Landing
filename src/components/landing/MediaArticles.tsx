@@ -50,7 +50,7 @@ const uiData:ArticleCardProps[] = [
 
 const ArticleCard:React.FC<ArticleCardProps> = ({title,description,link,imgSrc}) => {
     return (
-        <a href={link} className='flex flex-col shrink-0 w-[210x]'>
+        <a href={link} target='_blank' className='flex flex-col shrink-0 w-[210x]'>
             <div className='w-[210x] h-[210px] p-[20px] rounded-2xl flex justify-center items-center bg-[#F4F1DE]'>
                 <Image src={imgSrc} alt='article-img' width={170} />
             </div>

@@ -17,24 +17,24 @@ interface BlogCardProps {
 
 const uiData:BlogCardProps[] = [
     {
-        title:'How To Start Using Banko For Your\n Startup',
-        description:'Lorem ipsum dolor sit amet, consectetur\n adipiscing elit, sed do eiusmod tempor\n incididunt ut labore et dolore magna aliqua.\n Dui accumsan sit amet nulla facilisi morbi.',
-        link:'#',
-        tags:['Product','Technology'],
+        title:'RAG v2 at Onfinance AI',
+        description:'Learn how we are migrating to more accurate RAG systems powered by low entropy fine-tuned LLMs for finance',
+        link:'https://www.linkedin.com/posts/priyesh-srivastava_hi-all-as-we-at-onfinance-ai-are-migrating-activity-7245296013446422528-fQAU?utm_source=share&utm_medium=member_desktop',
+        tags:[],
         imgSrc:Blog1Img,
     },
     {
-        title:'10 Things Nobody Told You About\n Banko',
-        description:'Lorem ipsum dolor sit amet, consectetur\n adipiscing elit, sed do eiusmod tempor\n incididunt ut labore et dolore magna aliqua.\n Dui accumsan sit amet nulla facilisi morbi.',
-        link:'#',
-        tags:['Product','Technology'],
+        title:'ComplianceOS Announcement',
+        description:'Visualize a completely disruptive compliance journey powered by NeoGPT ComplianceOS financial agent',
+        link:'https://www.linkedin.com/feed/update/urn:li:activity:7247592422912753665/?actorCompanyId=53268745',
+        tags:[],
         imgSrc:Blog2Img,
     },
     {
-        title:'7 Ways To Improve You Saving Habits',
-        description:'Lorem ipsum dolor sit amet, consectetur\n adipiscing elit, sed do eiusmod tempor\n incididunt ut labore et dolore magna aliqua.\n Dui accumsan sit amet nulla facilisi morbi.',
-        link:'#',
-        tags:['Product','Technology'],
+        title:'NeoGPT Equity Analyst',
+        description:'Visualize the latest avatar of our equity analyst assistant as it raises the bar for what it means to be informed in the financial markets',
+        link:'https://www.linkedin.com/posts/onfinanceofficial_ai-neogpt-userexperience-activity-7240002485145214976-9WHv?utm_source=share&utm_medium=member_desktop',
+        tags:[],
         imgSrc:Blog3Img,
     }
 ]
@@ -42,8 +42,8 @@ const uiData:BlogCardProps[] = [
 
 const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) => {
     return (
-        <a href={link} className='flex flex-col min-w-[280px] md:min-w-[380px]'>
-            <div className='relative overflow-hidden rounded-2xl w-full min-h-[280px] lg:min-h-[380px]'>
+        <a href={link} target='_blank' className='flex flex-col w-[280px] md:w-[380px]'>
+            <div className='relative overflow-hidden rounded-2xl w-full h-[280px] lg:h-[380px]'>
                 <Image src={imgSrc} alt='blog-img' className='object-cover' fill />
             </div>
             <div className='poppins-semibold text-[21px] text-[#272727] text-wrap lg:whitespace-pre-line mt-6 mb-2'>{title}</div>
@@ -71,7 +71,7 @@ const OurBlog = () => {
                 <BlogCard title={item.title} description={item.description} link={item.link} imgSrc={item.imgSrc} tags={item.tags} key={idx} />
             )}
         </div>
-        <a href='#' className='flex items-center ml-auto mr-auto xl:mr-40'>
+        <a href='https://www.linkedin.com/company/onfinanceofficial/posts/?feedView=all' target='_blank' className='flex items-center ml-auto mr-auto xl:mr-40'>
             <div className='text-[21px] text-[#5BB5A2] poppins-semibold'>All Articles</div>
             <div className='relative w-6 h-6'>
                 <Image src={ArrowRightIcon} alt='right-arrow' className='object-cover' fill />
