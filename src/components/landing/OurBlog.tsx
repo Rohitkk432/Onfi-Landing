@@ -42,7 +42,7 @@ const uiData:BlogCardProps[] = [
 
 const BlogCard:React.FC<BlogCardProps> = ({title,description,link,tags,imgSrc}) => {
     return (
-        <a href={link} target='_blank' className='flex flex-col w-[280px] md:w-[380px]'>
+        <a href={link} target='_blank' className='flex flex-col w-[280px] md:w-[380px] shrink-0'>
             <div className='relative overflow-hidden rounded-2xl w-full h-[280px] lg:h-[380px]'>
                 <Image src={imgSrc} alt='blog-img' className='object-cover' fill />
             </div>
